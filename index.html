@@ -242,6 +242,7 @@
       font-size: 15px;
       font-weight: 700;
       color: white;
+      transition: 0.2s ease;
     }
 
     .btn-primary {
@@ -526,10 +527,11 @@
       line-height: 1.75;
     }
 
-    /* Coze 助手位置优化 */
+    /* 确保 Coze 悬浮助手始终在最上层 */
     #coze-chat-container,
     .coze-chat-container,
-    [class*="coze-chat"] {
+    [class*="coze"],
+    [class*="Coze"] {
       z-index: 9999 !important;
     }
 
@@ -690,37 +692,26 @@
     </section>
   </div>
 
-  <!-- Coze Chat SDK -->
+  <!-- Coze Chat SDK：稳定版配置 -->
   <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js"></script>
 
   <script>
-    new CozeWebSDK.WebChatClient({
-      config: {
-        bot_id: '7647801081602965547'
-      },
-
-      componentProps: {
-        title: '创实技术(CyteChsystems)公众号内容智能体',
-
-        /*
-          建议布局：
-          - 默认右下角悬浮按钮
-          - 点击后展开
-          - 展开后控制在 380px × 640px 左右
-          如果当前 SDK 版本不识别 width/height，也不会影响基础运行。
-        */
-        layout: 'pc',
-        width: 380,
-        height: 640
-      },
-
-      auth: {
-        type: 'token',
-        token: 'cztei_lDES78g3m6RvRVlwpk6iV8lW9JCY1re7UHnoK1BHTOXvik9naNQh0Ja25l2ioE8B4',
-        onRefreshToken: function () {
-          return 'cztei_lDES78g3m6RvRVlwpk6iV8lW9JCY1re7UHnoK1BHTOXvik9naNQh0Ja25l2ioE8B4';
+    window.addEventListener('load', function () {
+      new CozeWebSDK.WebChatClient({
+        config: {
+          bot_id: '7647801081602965547'
+        },
+        componentProps: {
+          title: '创实技术公众号内容生成助手'
+        },
+        auth: {
+          type: 'token',
+          token: 'cztei_lDES78g3m6RvRVlwpk6iV8lW9JCY1re7UHnoK1BHTOXvik9naNQh0Ja25l2ioE8B4',
+          onRefreshToken: function () {
+            return 'cztei_lDES78g3m6RvRVlwpk6iV8lW9JCY1re7UHnoK1BHTOXvik9naNQh0Ja25l2ioE8B4';
+          }
         }
-      }
+      });
     });
   </script>
 </body>
