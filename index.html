@@ -11,42 +11,26 @@
       box-sizing: border-box;
     }
 
-    html,
     body {
       margin: 0;
-      padding: 0;
-      min-height: 100%;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-      color: #eaf2ff;
-      background: #020713;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -5;
+      font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
       background:
         radial-gradient(circle at 50% 78%, rgba(245, 179, 102, 0.22), transparent 18%),
         radial-gradient(circle at 70% 20%, rgba(52, 116, 255, 0.18), transparent 28%),
         linear-gradient(180deg, #030717 0%, #07101f 48%, #020713 100%);
+      color: #eaf2ff;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -4;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 56px 56px;
-      opacity: 0.42;
-      mask-image: linear-gradient(to bottom, transparent 0%, black 35%, transparent 100%);
+    .page {
+      position: relative;
+      min-height: 100vh;
+      padding: 32px 6vw 56px;
+      overflow: hidden;
     }
 
-    .planet-arc {
+    .planet {
       position: absolute;
       top: -520px;
       left: 50%;
@@ -61,36 +45,7 @@
       box-shadow:
         inset 0 -70px 140px rgba(79, 129, 218, 0.12),
         0 0 180px rgba(72, 124, 220, 0.17);
-      z-index: -2;
-    }
-
-    .planet-arc::after {
-      content: "";
-      position: absolute;
-      inset: 90px;
-      border-radius: 50%;
-      border-bottom: 1px solid rgba(164, 198, 255, 0.22);
-      transform: rotate(-8deg);
-    }
-
-    .page {
-      position: relative;
-      min-height: 100vh;
-      padding: 32px 6vw 56px;
-      overflow: hidden;
-    }
-
-    .mist {
-      position: absolute;
-      left: -10%;
-      right: -10%;
-      bottom: 18%;
-      height: 230px;
-      background:
-        radial-gradient(ellipse at 50% 50%, rgba(98, 151, 213, 0.2), transparent 65%),
-        linear-gradient(90deg, transparent, rgba(204, 226, 255, 0.12), transparent);
-      filter: blur(28px);
-      z-index: -1;
+      z-index: 0;
     }
 
     .nav {
@@ -115,8 +70,7 @@
       height: 38px;
       border-radius: 50%;
       border: 1px solid rgba(146, 190, 255, 0.45);
-      background:
-        radial-gradient(circle at center, rgba(77, 142, 255, 0.85), rgba(16, 37, 70, 0.7));
+      background: radial-gradient(circle at center, rgba(77, 142, 255, 0.85), rgba(16, 37, 70, 0.7));
       box-shadow: 0 0 28px rgba(60, 134, 255, 0.55);
       display: flex;
       align-items: center;
@@ -138,7 +92,6 @@
       color: rgba(212, 229, 255, 0.62);
       margin-top: 2px;
       letter-spacing: 1.6px;
-      text-transform: uppercase;
     }
 
     .nav-pill {
@@ -147,7 +100,6 @@
       border-radius: 999px;
       color: rgba(226, 238, 255, 0.78);
       background: rgba(7, 18, 35, 0.48);
-      backdrop-filter: blur(10px);
       font-size: 13px;
     }
 
@@ -159,7 +111,7 @@
       gap: 46px;
       align-items: center;
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     .copy {
@@ -167,9 +119,7 @@
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
+      display: inline-block;
       padding: 8px 14px;
       border: 1px solid rgba(126, 184, 255, 0.26);
       border-radius: 999px;
@@ -177,16 +127,6 @@
       color: #9fc7ff;
       font-size: 13px;
       font-weight: 600;
-      backdrop-filter: blur(10px);
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #7db5ff;
-      box-shadow: 0 0 16px #5ba1ff;
     }
 
     h1 {
@@ -195,7 +135,6 @@
       line-height: 1.05;
       letter-spacing: -2.8px;
       color: #f7fbff;
-      text-shadow: 0 0 34px rgba(122, 175, 255, 0.15);
     }
 
     h1 span {
@@ -226,7 +165,6 @@
       font-size: 15px;
       font-weight: 700;
       color: white;
-      transition: 0.2s ease;
     }
 
     .btn-primary {
@@ -234,16 +172,10 @@
       box-shadow: 0 0 38px rgba(62, 122, 255, 0.38);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 0 46px rgba(62, 122, 255, 0.5);
-    }
-
     .btn-ghost {
       border: 1px solid rgba(154, 196, 255, 0.24);
       background: rgba(10, 22, 41, 0.56);
       color: rgba(232, 241, 255, 0.82);
-      backdrop-filter: blur(10px);
     }
 
     .meta-grid {
@@ -258,7 +190,6 @@
       border-radius: 18px;
       padding: 16px;
       background: linear-gradient(180deg, rgba(14, 28, 52, 0.72), rgba(5, 14, 28, 0.48));
-      backdrop-filter: blur(14px);
     }
 
     .meta-card strong {
@@ -300,7 +231,6 @@
       background:
         linear-gradient(180deg, rgba(126, 170, 245, 0.13), transparent),
         radial-gradient(circle at 50% 100%, rgba(105, 156, 234, 0.22), transparent 45%);
-      box-shadow: inset 0 -40px 90px rgba(109, 158, 230, 0.1);
     }
 
     .scene::after {
@@ -325,9 +255,7 @@
         linear-gradient(90deg, rgba(8, 19, 37, 0.2), rgba(75, 128, 189, 0.26), rgba(8, 19, 37, 0.2)),
         linear-gradient(180deg, rgba(43, 80, 123, 0.65), rgba(7, 17, 31, 0.82));
       border: 1px solid rgba(133, 185, 255, 0.22);
-      box-shadow:
-        0 0 28px rgba(72, 143, 255, 0.22),
-        inset 0 0 40px rgba(91, 153, 235, 0.08);
+      box-shadow: 0 0 28px rgba(72, 143, 255, 0.22);
     }
 
     .lab::before {
@@ -341,31 +269,17 @@
       font-weight: 700;
     }
 
-    .lab::after {
-      content: "";
+    .chip {
       position: absolute;
-      right: 28px;
-      top: 21px;
-      width: 52px;
-      height: 52px;
-      border: 1px solid rgba(154, 199, 255, 0.38);
-      border-radius: 50%;
-      box-shadow: 0 0 26px rgba(84, 150, 255, 0.32);
-      background:
-        radial-gradient(circle, rgba(90, 154, 255, 0.25), transparent 45%),
-        conic-gradient(from 120deg, transparent, rgba(124, 187, 255, 0.48), transparent);
-    }
-
-    .terrain {
-      position: absolute;
-      left: -10%;
-      right: -10%;
-      bottom: -8%;
-      height: 38%;
-      background:
-        radial-gradient(ellipse at 50% 0%, rgba(255, 194, 113, 0.12), transparent 35%),
-        linear-gradient(180deg, rgba(7, 14, 25, 0.18), #020713 72%);
-      border-top: 1px solid rgba(135, 180, 255, 0.09);
+      width: 64px;
+      height: 64px;
+      left: 70px;
+      bottom: 165px;
+      border-radius: 14px;
+      border: 1px solid rgba(128, 192, 255, 0.25);
+      background: linear-gradient(135deg, rgba(82, 140, 215, 0.24), rgba(9, 23, 42, 0.76));
+      box-shadow: 0 0 26px rgba(58, 134, 255, 0.22);
+      transform: rotate(14deg);
     }
 
     .person {
@@ -376,7 +290,6 @@
       width: 18px;
       height: 58px;
       z-index: 3;
-      filter: drop-shadow(0 0 18px rgba(160, 204, 255, 0.28));
     }
 
     .person .head {
@@ -419,38 +332,15 @@
       transform: rotate(-8deg);
     }
 
-    .orbit {
+    .terrain {
       position: absolute;
-      width: 320px;
-      height: 320px;
-      border: 1px solid rgba(120, 179, 255, 0.13);
-      border-radius: 50%;
-      right: -90px;
-      top: 120px;
-      transform: rotate(-22deg);
-    }
-
-    .chip {
-      position: absolute;
-      width: 64px;
-      height: 64px;
-      left: 70px;
-      bottom: 165px;
-      border-radius: 14px;
-      border: 1px solid rgba(128, 192, 255, 0.25);
+      left: -10%;
+      right: -10%;
+      bottom: -8%;
+      height: 38%;
       background:
-        linear-gradient(135deg, rgba(82, 140, 215, 0.24), rgba(9, 23, 42, 0.76));
-      box-shadow: 0 0 26px rgba(58, 134, 255, 0.22);
-      transform: rotate(14deg);
-    }
-
-    .chip::before,
-    .chip::after {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      border: 1px solid rgba(170, 213, 255, 0.3);
-      border-radius: 6px;
+        radial-gradient(ellipse at 50% 0%, rgba(255, 194, 113, 0.12), transparent 35%),
+        linear-gradient(180deg, rgba(7, 14, 25, 0.18), #020713 72%);
     }
 
     .bottom-steps {
@@ -460,7 +350,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     .step {
@@ -468,7 +358,6 @@
       background: rgba(8, 18, 35, 0.58);
       border-radius: 22px;
       padding: 22px;
-      backdrop-filter: blur(14px);
     }
 
     .step-num {
@@ -513,28 +402,14 @@
         grid-template-columns: 1fr;
       }
 
-      .nav {
-        align-items: flex-start;
-        gap: 16px;
-        height: auto;
-      }
-
       .nav-pill {
         display: none;
-      }
-
-      h1 {
-        letter-spacing: -1.6px;
       }
     }
 
     @media (max-width: 640px) {
       .page {
         padding: 24px 18px 44px;
-      }
-
-      .hero {
-        margin-top: 38px;
       }
 
       h1 {
@@ -558,10 +433,9 @@
 </head>
 
 <body>
-  <div class="planet-arc"></div>
-  <div class="mist"></div>
-
   <div class="page">
+    <div class="planet"></div>
+
     <header class="nav">
       <div class="brand">
         <div class="brand-mark">CS</div>
@@ -617,8 +491,7 @@
         </div>
       </section>
 
-      <section class="scene" aria-label="未来科技实验室视觉封面">
-        <div class="orbit"></div>
+      <section class="scene">
         <div class="chip"></div>
         <div class="lab"></div>
 
@@ -655,23 +528,23 @@
   </div>
 
   <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js"></script>
-  <script>
-    new CozeWebSDK.WebChatClient({
-      config: {
-        bot_id: '7647801081602965547',
-      },
-      componentProps: {
-        title: 'Coze',
-      },
-      auth: {
-        type: 'token',
-        token: 'cztei_lXWpElX0oCryhh1hIQJPo2KgfVaIp7MYxjb4rvqIaBOmrGl3y2QYOjLXaljEbXDeQ',
-        onRefreshToken: function () {
-          return 'cztei_lXWpElX0oCryhh1hIQJPo2KgfVaIp7MYxjb4rvqIaBOmrGl3y2QYOjLXaljEbXDeQ'
-        }
+<script>
+  new CozeWebSDK.WebChatClient({
+    config: {
+      bot_id: '7647801081602965547',
+    },
+    componentProps: {
+      title: 'Coze',
+    },
+    auth: {
+      type: 'token',
+      token: 'cztei_lXWpElX0oCryhh1hIQJPo2KgfVaIp7MYxjb4rvqIaBOmrGl3y2QYOjLXaljEbXDeQ',
+      onRefreshToken: function () {
+        return 'cztei_lXWpElX0oCryhh1hIQJPo2KgfVaIp7MYxjb4rvqIaBOmrGl3y2QYOjLXaljEbXDeQ'
       }
-    });
-  </script>
+    }
+  });
+</script>
 
 </body>
 </html>
