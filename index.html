@@ -8,185 +8,49 @@
 
   <style>
     body {
-      font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-family: Arial, sans-serif;
       padding: 40px;
-      margin: 0;
+      background: linear-gradient(180deg, #030712 0%, #07111f 50%, #020617 100%);
       min-height: 100vh;
-      background:
-        radial-gradient(circle at 50% 15%, rgba(90, 140, 255, 0.28), transparent 28%),
-        radial-gradient(circle at 50% 85%, rgba(255, 180, 90, 0.16), transparent 22%),
-        linear-gradient(180deg, #030716 0%, #07101f 50%, #020713 100%);
-      color: #eaf2ff;
+      color: #e5edff;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 0 auto;
-      background: rgba(8, 18, 35, 0.78);
-      padding: 42px;
-      border-radius: 26px;
-      border: 1px solid rgba(140, 190, 255, 0.2);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
-    }
-
-    .top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 42px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: radial-gradient(circle, #6aa8ff, #16325f);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: white;
-      box-shadow: 0 0 28px rgba(80, 150, 255, 0.6);
-    }
-
-    .brand-title {
-      font-size: 18px;
-      font-weight: bold;
-      color: #ffffff;
-    }
-
-    .brand-subtitle {
-      margin-top: 4px;
-      font-size: 12px;
-      color: rgba(220, 235, 255, 0.58);
-      letter-spacing: 1.4px;
+      background: rgba(10, 24, 46, 0.92);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(120, 170, 255, 0.22);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
     }
 
     .tag {
-      padding: 9px 15px;
-      border-radius: 999px;
-      border: 1px solid rgba(140, 190, 255, 0.24);
-      color: rgba(226, 238, 255, 0.78);
-      font-size: 13px;
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 42px;
-      align-items: center;
-    }
-
-    .eyebrow {
       display: inline-block;
+      margin-bottom: 18px;
       padding: 8px 14px;
-      margin-bottom: 20px;
       border-radius: 999px;
-      background: rgba(90, 150, 255, 0.14);
+      background: rgba(80, 140, 255, 0.16);
       color: #9fc7ff;
       font-size: 13px;
       font-weight: bold;
-      border: 1px solid rgba(126, 184, 255, 0.22);
     }
 
     h1 {
-      margin: 0 0 20px;
-      font-size: 56px;
-      line-height: 1.08;
-      letter-spacing: -2px;
+      margin-bottom: 16px;
+      font-size: 42px;
+      line-height: 1.2;
       color: #ffffff;
-    }
-
-    h1 span {
-      color: #8fbfff;
     }
 
     p {
       line-height: 1.9;
-      color: rgba(223, 235, 255, 0.76);
+      color: rgba(230, 240, 255, 0.76);
       font-size: 16px;
     }
 
-    .actions {
-      margin-top: 28px;
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      border: none;
-      border-radius: 999px;
-      padding: 14px 22px;
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-      color: white;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #6aa8ff, #2c64ff);
-      box-shadow: 0 0 32px rgba(70, 130, 255, 0.35);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(160, 200, 255, 0.22);
-    }
-
-    .visual {
-      min-height: 360px;
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at 50% 8%, rgba(160, 200, 255, 0.18), transparent 30%),
-        linear-gradient(180deg, rgba(20, 40, 75, 0.92), rgba(4, 10, 22, 0.96));
-      border: 1px solid rgba(150, 195, 255, 0.18);
-      padding: 28px;
-      box-shadow: inset 0 0 60px rgba(100, 160, 255, 0.08);
-    }
-
-    .planet {
-      height: 150px;
-      border-radius: 0 0 220px 220px;
-      border-bottom: 1px solid rgba(180, 215, 255, 0.28);
-      background: linear-gradient(180deg, rgba(120, 170, 255, 0.12), transparent);
-      margin-bottom: 38px;
-    }
-
-    .lab {
-      height: 80px;
-      border-radius: 16px 16px 6px 6px;
-      background:
-        linear-gradient(90deg, rgba(20, 40, 70, 0.45), rgba(90, 140, 200, 0.25), rgba(20, 40, 70, 0.45)),
-        linear-gradient(180deg, rgba(38, 76, 120, 0.75), rgba(7, 17, 31, 0.9));
-      border: 1px solid rgba(130, 185, 255, 0.22);
-      box-shadow: 0 0 28px rgba(72, 143, 255, 0.18);
-      padding: 22px;
-      color: rgba(230, 242, 255, 0.62);
-      font-size: 13px;
-      letter-spacing: 1.4px;
-      font-weight: bold;
-    }
-
-    .person {
-      width: 8px;
-      height: 42px;
-      margin: 28px auto 0;
-      border-radius: 999px;
-      background: linear-gradient(180deg, #dcecff, #4b5c70);
-      box-shadow: 0 0 18px rgba(170, 210, 255, 0.36);
-    }
-
     .features {
-      margin-top: 34px;
+      margin-top: 28px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
@@ -194,52 +58,34 @@
 
     .feature {
       padding: 18px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(140, 190, 255, 0.16);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(130, 180, 255, 0.16);
     }
 
     .feature strong {
       display: block;
       margin-bottom: 8px;
-      color: white;
-      font-size: 15px;
+      color: #ffffff;
     }
 
     .feature span {
-      color: rgba(220, 235, 255, 0.62);
       font-size: 13px;
+      color: rgba(220,235,255,0.62);
       line-height: 1.7;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 800px) {
       body {
         padding: 20px;
       }
 
-      .container {
-        padding: 28px;
-      }
-
-      .top {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
       h1 {
-        font-size: 38px;
+        font-size: 32px;
       }
 
       .features {
         grid-template-columns: 1fr;
-      }
-
-      .tag {
-        display: none;
       }
     }
   </style>
@@ -247,50 +93,17 @@
 
 <body>
   <div class="container">
-    <div class="top">
-      <div class="brand">
-        <div class="brand-logo">CS</div>
-        <div>
-          <div class="brand-title">创实技术公众号内容生成助手</div>
-          <div class="brand-subtitle">CYTECHSYSTEMS AI CONTENT AGENT</div>
-        </div>
-      </div>
+    <div class="tag">CYTECHSYSTEMS AI CONTENT AGENT</div>
 
-      <div class="tag">电子元器件分销 · 芯片检测 · 科技供应链</div>
-    </div>
+    <h1>创实技术公众号内容生成助手</h1>
 
-    <div class="hero">
-      <div>
-        <div class="eyebrow">企业公众号首图风格 · 未来科技感</div>
+    <p>
+      面向电子元器件分销、芯片检测、AI 科技企业场景，
+      自动将新闻稿、产品资料、荣誉证书、检测认证与行业资讯，
+      生成具有品牌调性、科技质感和公众号传播力的图文草稿。
+    </p>
 
-        <h1>
-          让每一份资料<br />
-          <span>抵达更远的地平线</span>
-        </h1>
-
-        <p>
-          面向电子元器件分销、芯片检测、AI 科技企业场景，
-          自动将新闻稿、产品资料、荣誉证书、检测认证与行业资讯，
-          生成具有品牌调性、科技质感和公众号传播力的图文草稿。
-        </p>
-
-        <div class="actions">
-          <button class="btn btn-primary" onclick="alert('请点击右下角聊天按钮，开始生成公众号草稿')">
-            开始生成公众号草稿 →
-          </button>
-
-          <button class="btn btn-secondary" onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })">
-            查看能力说明
-          </button>
-        </div>
-      </div>
-
-      <div class="visual">
-        <div class="planet"></div>
-        <div class="lab">CYTECHSYSTEMS / 创实技术</div>
-        <div class="person"></div>
-      </div>
-    </div>
+    <p>点击右下角聊天按钮，即可开始使用。</p>
 
     <div class="features">
       <div class="feature">
@@ -300,12 +113,12 @@
 
       <div class="feature">
         <strong>品牌表达</strong>
-        <span>融合 CYTECHSYSTEMS / 创实技术的克制科技感。</span>
+        <span>融合 CYTECHSYSTEMS / 创实技术的科技感表达。</span>
       </div>
 
       <div class="feature">
         <strong>图文生成</strong>
-        <span>生成公众号文章、首图提示词、配图建议与排版结构。</span>
+        <span>生成公众号文章、配图建议与排版结构。</span>
       </div>
     </div>
   </div>
