@@ -4,40 +4,123 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>公众号内容生成助手</title>
+  <title>创实技术｜公众号内容生成助手</title>
 
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 40px;
-      background: #f7f8fa;
+      background: linear-gradient(180deg, #030712 0%, #07111f 50%, #020617 100%);
+      min-height: 100vh;
+      color: #e5edff;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
-      background: white;
-      padding: 32px;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      background: rgba(10, 24, 46, 0.92);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(120, 170, 255, 0.22);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(80, 140, 255, 0.16);
+      color: #9fc7ff;
+      font-size: 13px;
+      font-weight: bold;
     }
 
     h1 {
-      margin-bottom: 12px;
+      margin-bottom: 16px;
+      font-size: 42px;
+      line-height: 1.2;
+      color: #ffffff;
     }
 
     p {
-      line-height: 1.8;
-      color: #555;
+      line-height: 1.9;
+      color: rgba(230, 240, 255, 0.76);
+      font-size: 16px;
+    }
+
+    .features {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .feature {
+      padding: 18px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(130, 180, 255, 0.16);
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .feature span {
+      font-size: 13px;
+      color: rgba(220,235,255,0.62);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 800px) {
+      body {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h1>公众号内容生成助手</h1>
-    <p>这是一个测试版 AI 智能体网页。</p>
+    <div class="tag">CYTECHSYSTEMS AI CONTENT AGENT</div>
+
+    <h1>创实技术公众号内容生成助手</h1>
+
+    <p>
+      面向电子元器件分销、芯片检测、AI 科技企业场景，
+      自动将新闻稿、产品资料、荣誉证书、检测认证与行业资讯，
+      生成具有品牌调性、科技质感和公众号传播力的图文草稿。
+    </p>
+
     <p>点击右下角聊天按钮，即可开始使用。</p>
+
+    <div class="features">
+      <div class="feature">
+        <strong>内容理解</strong>
+        <span>解析新闻稿、认证证书、产品资料与行业信息。</span>
+      </div>
+
+      <div class="feature">
+        <strong>品牌表达</strong>
+        <span>融合 CYTECHSYSTEMS / 创实技术的科技感表达。</span>
+      </div>
+
+      <div class="feature">
+        <strong>图文生成</strong>
+        <span>生成公众号文章、配图建议与排版结构。</span>
+      </div>
+    </div>
   </div>
 
   <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js"></script>
@@ -51,9 +134,9 @@
     },
     auth: {
       type: 'token',
-      token: 'cztei_lXWpElX0oCryhh1hIQJPo2KgfVaIp7MYxjb4rvqIaBOmrGl3y2QYOjLXaljEbXDeQ',
+      token: 'cztei_lVxsPtbvMVj7WYbZD0bG3ruET2e0vZwVSGGnRWVR85y83sHDI3wp5Mvu19AcpURZ2',
       onRefreshToken: function () {
-        return 'cztei_lXWpElX0oCryhh1hIQJPo2KgfVaIp7MYxjb4rvqIaBOmrGl3y2QYOjLXaljEbXDeQ'
+        return 'cztei_lVxsPtbvMVj7WYbZD0bG3ruET2e0vZwVSGGnRWVR85y83sHDI3wp5Mvu19AcpURZ2'
       }
     }
   });
